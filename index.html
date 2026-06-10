@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YU GYM | Fitness • Wellness • Performance</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0057FF',
+                        darkBg: '#0D0D0D',
+                        accent: '#4DA3FF',
+                        cardBg: '#141414',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0D0D0D; color: #FFFFFF; }
+        .premium-glow { box-shadow: 0 0 25px rgba(0, 87, 255, 0.35); }
+        .tab-active { background-color: #0057FF; color: #FFFFFF; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- НАВИГАЦИЯ -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-xl font-black tracking-wider text-white flex items-center gap-1">
+                    <i data-lucide="dumbbell" class="text-primary w-6 h-6 rotate-45"></i>
+                    YU <span class="text-primary">GYM</span>
+                </span>
+            </a>
+
+            <!-- Десктоп Меню -->
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-400">
+                <a href="#" class="text-white hover:text-primary transition-colors">Главная</a>
+                <a href="#about" class="hover:text-white transition-colors">О клубе</a>
+                <a href="#tariffs" class="hover:text-white transition-colors">Абонементы</a>
+                <a href="#trainers" class="hover:text-white transition-colors">Тренеры</a>
+                <a href="#gallery" class="hover:text-white transition-colors">Галерея</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+                <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
+            </nav>
+
+            <div class="hidden md:flex items-center">
+                <a href="https://wa.me/#" target="_blank" class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Записаться
+                </a>
+            </div>
+
+            <!-- Мобильная кнопка меню -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Мобильное выпадающее меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkBg border-b border-white/10 px-4 pt-2 pb-6 space-y-2 absolute w-full left-0 top-20 shadow-2xl">
+            <a href="#" class="block text-white text-base py-2.5 border-b border-white/5">Главная</a>
+            <a href="#about" class="block text-gray-400 hover:text-white text-base py-2.5 border-b border-white/5">О клубе</a>
+            <a href="#tariffs" class="block text-gray-400 hover:text-white text-base py-2.5 border-b border-white/5">Абонементы</a>
+            <a href="#trainers" class="block text-gray-400 hover:text-white text-base py-2.5 border-b border-white/5">Тренеры</a>
+            <a href="#gallery" class="block text-gray-400 hover:text-white text-base py-2.5 border-b border-white/5">Галерея</a>
+            <a href="#faq" class="block text-gray-400 hover:text-white text-base py-2.5 border-b border-white/5">FAQ</a>
+            <a href="#contacts" class="block text-gray-400 hover:text-white text-base py-2.5">Контакты</a>
+            <a href="https://wa.me/#" class="w-full text-center bg-primary text-white block py-3 rounded-xl font-semibold mt-4">Записаться</a>
+        </div>
+    </header>
+
+    <!-- БЛОК 1: HERO -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-black via-darkBg to-darkBg">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920" alt="Gym Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center mt-8 md:mt-12">
+            <span class="text-primary tracking-[0.2em] text-xs font-bold uppercase block mb-3">Welcome to</span>
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-4">YU <span class="text-primary">GYM</span></h1>
+            <p class="text-[10px] sm:text-xs md:text-base font-semibold tracking-[0.2em] md:tracking-[0.4em] text-gray-400 uppercase mb-8">
+                Fitness <span class="text-primary">•</span> Wellness <span class="text-primary">•</span> Performance
+                <span class="text-gray-300 block tracking-normal normal-case font-normal mt-4 max-w-xl mx-auto text-sm sm:text-base px-2">
+                    Современный фитнес-клуб на территории Yessenov University для студентов и жителей Актау.
+                </span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-sm mx-auto sm:max-w-none px-4">
+                <a href="#tariffs" class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-all text-center">
+                    Подобрать абонемент
+                </a>
+                <a href="#contacts" class="w-full sm:w-auto border border-white/20 bg-white/5 text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-all text-center">
+                    Записаться
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-4xl mx-auto mt-16 md:mt-24 pt-8 border-t border-white/5 text-gray-400 text-[11px] sm:text-xs">
+                <div class="flex flex-col items-center gap-2 px-2"><i data-lucide="activity" class="text-primary w-5 h-5"></i> Тренажёрный зал</div>
+                <div class="flex flex-col items-center gap-2 px-2"><i data-lucide="droplet" class="text-primary w-5 h-5"></i> Бассейн</div>
+                <div class="flex flex-col items-center gap-2 px-2"><i data-lucide="flame" class="text-primary w-5 h-5"></i> Сауна</div>
+                <div class="flex flex-col items-center gap-2 px-2"><i data-lucide="users" class="text-primary w-5 h-5"></i> Персональные тренировки</div>
+                <div class="col-span-2 sm:col-span-3 md:col-span-1 flex flex-col items-center gap-2 px-2 pt-2 sm:pt-0"><i data-lucide="layers" class="text-primary w-5 h-5"></i> Мини-группы</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 3: СТАТИСТИКА -->
+    <section class="py-12 bg-darkBg border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 bg-cardBg/50 p-6 md:p-8 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4 p-2 sm:border-r border-white/5 last:border-0">
+                    <div class="p-3 bg-primary/10 rounded-xl text-primary"><i data-lucide="smile"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold">127+</div>
+                        <div class="text-xs text-gray-400">Активных клиентов</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-2 md:border-r border-white/5 last:border-0">
+                    <div class="p-3 bg-primary/10 rounded-xl text-primary"><i data-lucide="award"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold">2+</div>
+                        <div class="text-xs text-gray-400">Профессиональных тренера</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-2 sm:border-r border-white/5 last:border-0">
+                    <div class="p-3 bg-primary/10 rounded-xl text-primary"><i data-lucide="maximize"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold">500 м²</div>
+                        <div class="text-xs text-gray-400">Площадь зала</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-2 last:border-0">
+                    <div class="p-3 bg-primary/10 rounded-xl text-primary"><i data-lucide="clock"></i></div>
+                    <div>
+                        <div class="text-2xl font-bold">08:00–22:00</div>
+                        <div class="text-xs text-gray-400">Режим работы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 4: О КЛУБЕ -->
+    <section id="about" class="py-20 bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Виртуальный тур</span>
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">Наш клуб</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
+                        Просторный зал, современное оборудование, чистейший бассейн и финская сауна — всё создано для вашего максимального прогресса и комфортного отдыха.
+                    </p>
+                    <a href="#gallery" class="inline-flex bg-primary hover:bg-primary/90 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all">
+                        Смотреть галерею
+                    </a>
+                </div>
+                
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="relative group rounded-2xl overflow-hidden h-64 border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600" class="w-full h-full object-cover" alt="Зал">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-5">
+                            <div class="flex justify-between items-center w-full">
+                                <span class="font-bold text-sm">Тренажёрный зал</span>
+                                <span class="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden h-64 border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=600" class="w-full h-full object-cover" alt="Бассейн">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-5">
+                            <div class="flex justify-between items-center w-full">
+                                <span class="font-bold text-sm">Бассейн</span>
+                                <span class="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden h-64 border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=600" class="w-full h-full object-cover" alt="Сауна">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-5">
+                            <div class="flex justify-between items-center w-full">
+                                <span class="font-bold text-sm">Sauna</span>
+                                <span class="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 5: АБОНЕМЕНТЫ + ТАБЫ (ИЗ НОВЫХ ФОТО) -->
+    <section id="tariffs" class="py-20 bg-gradient-to-b from-darkBg to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">YU GYM Price List</span>
+                <h2 class="text-3xl md:text-5xl font-black mb-6">Выберите свой тариф</h2>
+                
+                <!-- Таб Переключатель (Месячные / Полугодовые / Годовые) -->
+                <div class="inline-flex p-1 bg-cardBg rounded-xl border border-white/5 max-w-full overflow-x-auto whitespace-nowrap">
+                    <button onclick="switchTab('monthly')" id="tab-monthly" class="px-4 py-2.5 rounded-lg text-xs font-bold transition-all tab-active">Месячные</button>
+                    <button onclick="switchTab('half-year')" id="tab-half-year" class="px-4 py-2.5 rounded-lg text-xs font-bold text-gray-400 transition-all">Полугодовые</button>
+                    <button onclick="switchTab('yearly')" id="tab-yearly" class="px-4 py-2.5 rounded-lg text-xs font-bold text-gray-400 transition-all">Годовые</button>
+                </div>
+            </div>
+
+            <!-- ГРУППА 1: МЕСЯЧНЫЕ АБОНЕМЕНТЫ -->
+            <div id="group-monthly" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- Student -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between transition-all">
+                    <div>
+                        <h3 class="text-primary font-black text-sm tracking-wider uppercase mb-3">Student Club Card</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">7 500 ₸</span><span class="text-gray-500 text-xs"> / мес</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 12 посещений в месяц</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 08:00–18:00 • Будни</li>
+                            <li class="flex items-center gap-2 text-accent"><i data-lucide="check" class="text-accent w-4 h-4"></i> Для студентов YU</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-white/5 border border-white/10 py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Дневная подписка -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between transition-all">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Дневная подписка</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">12 000 ₸</span><span class="text-gray-500 text-xs"> / мес</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 08:00–18:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал</li>
+                            <li class="flex items-center gap-2 text-gray-550 opacity-40"><i data-lucide="x" class="text-red-500 w-4 h-4"></i> Бассейн и Сауна</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Вечерняя подписка -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between transition-all">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Вечерняя подписка</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">15 000 ₸</span><span class="text-gray-500 text-xs"> / мес</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 18:00–22:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал</li>
+                            <li class="flex items-center gap-2 text-gray-550 opacity-40"><i data-lucide="x" class="text-red-500 w-4 h-4"></i> Бассейн и Сауна</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Безлимитный подписка -->
+                <div class="bg-cardBg rounded-2xl p-6 border-2 border-primary premium-glow flex flex-col justify-between relative transition-all">
+                    <span class="absolute -top-2.5 right-4 bg-primary text-white text-[9px] uppercase font-black px-2 py-0.5 rounded-full">Топ</span>
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Подписка "Безлимитный"</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">25 000 ₸</span><span class="text-gray-500 text-xs"> / мес</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Полный безлимит</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал + Бассейн</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Финская Сауна</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- ГРУППА 2: ПОЛУГОДОВЫЕ АБОНЕМЕНТЫ -->
+            <div id="group-half-year" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-4xl mx-auto">
+                <!-- Полугодовой дневной -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Полугодовой Дневной</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">60 000 ₸</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 08:00–18:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал на 6 месяцев</li>
+                            <li class="flex items-center gap-2 opacity-40"><i data-lucide="x" class="text-red-500 w-4 h-4"></i> Без бассейна</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Полугодовой вечерний -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Полугодовой Вечерний</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">75 000 ₸</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 18:00–22:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал на 6 месяцев</li>
+                            <li class="flex items-center gap-2 opacity-40"><i data-lucide="x" class="text-red-500 w-4 h-4"></i> Без бассейна</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- ГРУППА 3: ГОДОВЫЕ АБОНЕМЕНТЫ -->
+            <div id="group-yearly" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
+                <!-- Годовой Дневной -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Годовой Дневной</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">120 000 ₸</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 08:00–18:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал на 12 месяцев</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Годовой Вечерний -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Годовой Вечерний</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">15 000 ₸</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 18:00–22:00</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес зал на 12 месяцев</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+                <!-- Годовой Безлимитный -->
+                <div class="bg-cardBg rounded-2xl p-6 border border-2 border-primary premium-glow flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-white font-black text-sm tracking-wider uppercase mb-3">Годовой "Безлимитный"</h3>
+                        <div class="mb-4"><span class="text-3xl font-extrabold">250 000 ₸</span></div>
+                        <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> 365 дней без ограничений</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-4 h-4"></i> Фитнес-зал в любое время</li>
+                        </ul>
+                    </div>
+                    <button class="w-full mt-6 bg-primary py-2.5 rounded-xl text-xs font-semibold">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- Дополнительная информация из прайс-листа -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto text-xs">
+                <div class="w-full bg-cardBg/40 border border-white/5 px-6 py-4 rounded-xl flex justify-between items-center">
+                    <span class="text-gray-400">Вступительный взнос (разово)</span>
+                    <span class="font-bold text-white">5 000 ₸</span>
+                </div>
+                <div class="w-full bg-primary/10 border border-primary/20 px-6 py-4 rounded-xl flex justify-between items-center">
+                    <span class="text-gray-300">Сотрудники YU</span>
+                    <span class="font-bold text-accent">50% Скидка</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 6: КВИЗ -->
+    <section class="py-20 bg-darkBg border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="flex justify-center order-2 lg:order-1">
+                    <div class="w-full max-w-[280px] h-[480px] bg-black rounded-[36px] p-3 border-4 border-white/10 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-4 bg-black rounded-b-xl z-30"></div>
+
+                        <div id="quiz-container" class="relative z-10 flex flex-col justify-between h-full pt-6 pb-2 px-3">
+                            <!-- Шаг 1 -->
+                            <div id="step-1" class="quiz-step flex flex-col justify-between h-full">
+                                <div>
+                                    <span class="text-[10px] text-gray-500 font-bold block mb-1">Вопрос 1 из 3</span>
+                                    <h4 class="text-sm font-bold text-white mb-4">Вы являетесь студентом Yessenov University?</h4>
+                                </div>
+                                <div class="space-y-2 mb-4">
+                                    <button onclick="nextStep('student', true)" class="w-full bg-primary text-xs py-2.5 rounded-xl font-semibold">Да, студент</button>
+                                    <button onclick="nextStep('student', false)" class="w-full bg-white/5 border border-white/10 text-xs py-2.5 rounded-xl font-semibold">Нет</button>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 2 -->
+                            <div id="step-2" class="quiz-step hidden flex flex-col justify-between h-full">
+                                <div>
+                                    <span class="text-[10px] text-gray-500 font-bold block mb-1">Вопрос 2 из 3</span>
+                                    <h4 class="text-sm font-bold text-white mb-4">Нужен бассейн и финская сауна?</h4>
+                                </div>
+                                <div class="space-y-2 mb-4">
+                                    <button onclick="nextStep('pool', true)" class="w-full bg-primary text-xs py-2.5 rounded-xl font-semibold">Да, обязательно</button>
+                                    <button onclick="nextStep('pool', false)" class="w-full bg-white/5 border border-white/10 text-xs py-2.5 rounded-xl font-semibold">Только зал</button>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 3 -->
+                            <div id="step-3" class="quiz-step hidden flex flex-col justify-between h-full">
+                                <div>
+                                    <span class="text-[10px] text-gray-500 font-bold block mb-1">Вопрос 3 из 3</span>
+                                    <h4 class="text-sm font-bold text-white mb-4">Удобное время для занятий?</h4>
+                                </div>
+                                <div class="space-y-2 mb-4">
+                                    <button onclick="calculateResult('morning')" class="w-full bg-primary text-xs py-2.5 rounded-xl font-semibold">День (до 18:00)</button>
+                                    <button onclick="calculateResult('evening')" class="w-full bg-primary text-xs py-2.5 rounded-xl font-semibold">Вечер (после 18:00)</button>
+                                </div>
+                            </div>
+
+                            <!-- Результат -->
+                            <div id="step-result" class="quiz-step hidden flex flex-col justify-between h-full text-center py-4">
+                                <div>
+                                    <i data-lucide="sparkles" class="text-primary w-8 h-8 mx-auto mb-2"></i>
+                                    <span class="text-[9px] text-gray-400 font-bold uppercase block">Рекомендуем:</span>
+                                    <h4 id="result-title" class="text-lg font-black text-white mt-1">Безлимитный</h4>
+                                    <p id="result-desc" class="text-[10px] text-gray-400 mt-2 leading-relaxed">Полный безлимитный доступ ко всем зонам.</p>
+                                </div>
+                                <button onclick="resetQuiz()" class="w-full border border-white/10 bg-white/5 text-[11px] py-2 rounded-xl text-gray-400">Заново</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center lg:text-left order-1 lg:order-2">
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Подбор тарифа</span>
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">Не знаете что выбрать?</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
+                        Ответьте на три легких вопроса на виртуальном экране смартфона, и алгоритм мгновенно подберет карту под ваш бюджет и цели.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 7: ТРЕНЕРЫ -->
+    <section id="trainers" class="py-20 bg-gradient-to-b from-black to-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Наши тренеры</span>
+                <h2 class="text-3xl md:text-5xl font-black">Профессионалы рядом с вами</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-white/5 flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-56 sm:h-auto">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=600" class="w-full h-full object-cover object-top" alt="Danyal">
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-black mb-0.5">DANYAL</h3>
+                            <span class="text-primary text-xs font-medium block mb-3">Фитнес-тренер</span>
+                            <ul class="space-y-1.5 text-xs text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i> Силовые тренировки</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i> Набор массы</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/#" target="_blank" class="w-full text-center border border-white/10 py-2 rounded-xl text-xs font-semibold mt-4 block">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-white/5 flex flex-col sm:flex-row">
+                    <div class="sm:w-1/2 h-56 sm:h-auto">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=600" class="w-full h-full object-cover object-top" alt="Gulnur">
+                    </div>
+                    <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-black mb-0.5">GULNUR</h3>
+                            <span class="text-primary text-xs font-medium block mb-3">Фитнес-тренер</span>
+                            <ul class="space-y-1.5 text-xs text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i> Функциональный тренинг</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-primary w-3.5 h-3.5"></i> Коррекция фигуры</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/#" target="_blank" class="w-full text-center border border-white/10 py-2 rounded-xl text-xs font-semibold mt-4 block">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 9: ГАЛЕРЕЯ -->
+    <section id="gallery" class="py-20 bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center sm:text-left mb-10">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Галерея</span>
+                <h2 class="text-3xl font-black">Наш зал</h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1605296867304-46d5465a25f1?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-32 bg-gray-800 rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=400" class="w-full h-full object-cover"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 10: FAQ -->
+    <section id="faq" class="py-20 bg-gradient-to-b from-darkBg to-black border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Вопросы</span>
+                <h2 class="text-3xl font-black">FAQ</h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-cardBg border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-5 py-4 text-left flex justify-between items-center text-sm font-semibold">
+                        <span>Есть ли скидки для сотрудников YU?</span>
+                        <i data-lucide="plus" class="w-4 h-4 text-primary"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs text-gray-400">
+                        Да, согласно утвержденному прайс-листу, сотрудникам Yessenov University предоставляется эксклюзивная скидка 50% на абонементы.
+                    </div>
+                </div>
+                <div class="bg-cardBg border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-5 py-4 text-left flex justify-between items-center text-sm font-semibold">
+                        <span>Что входит в безлимитную подписку?</span>
+                        <i data-lucide="plus" class="w-4 h-4 text-primary"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs text-gray-400">
+                        В безлимитную подписку входит неограниченное посещение тренажерного зала, бассейна и финской сауны согласно часам работы клуба.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer id="contacts" class="bg-black text-gray-500 text-[11px] py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8 text-center sm:text-left">
+            <div>
+                <span class="text-white font-black tracking-wider text-sm block mb-3">YU GYM</span>
+                <p class="text-gray-400">Премиальный фитнес на территории Yessenov University.</p>
+            </div>
+            <div>
+                <span class="text-white font-bold block mb-3">Контакты</span>
+                <p class="text-gray-400">г. Актау, 32 мкр, YU<br>Тел: +7 (777) 123-45-67</p>
+            </div>
+            <div>
+                <span class="text-white font-bold block mb-3">График работы</span>
+                <p class="text-gray-400">Пн - Пт: 08:00 - 22:00<br>Сб - Вс: 09:00 - 21:00</p>
+            </div>
+            <div class="flex flex-col items-center sm:items-start">
+                <span class="text-white font-bold block mb-3">Мы в соцсетях</span>
+                <div class="flex gap-4 text-white">
+                    <a href="#" class="hover:text-primary"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-primary"><i data-lucide="send" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-white/5 text-center sm:flex sm:justify-between text-[10px]">
+            <span>© 2026 YU GYM. Все права защищены.</span>
+            <span class="block mt-1 sm:mt-0">Разработка — Kernel</span>
+        </div>
+    </footer>
+
+    <!-- СКРИПТЫ -->
+    <script>
+        lucide.createIcons();
+
+        // Бургер меню мобильной навигации
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Закрытие меню при клике по ссылке на мобилке
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Табы для цен (Месячные / Полугодовые / Годовые)
+        function switchTab(type) {
+            // Скрываем все группы
+            document.getElementById('group-monthly').classList.add('hidden');
+            document.getElementById('group-half-year').classList.add('hidden');
+            document.getElementById('group-yearly').classList.add('hidden');
+            
+            // Сбрасываем стили кнопок
+            document.getElementById('tab-monthly').classList.remove('tab-active', 'text-white');
+            document.getElementById('tab-half-year').classList.remove('tab-active', 'text-white');
+            document.getElementById('tab-yearly').classList.remove('tab-active', 'text-white');
+            document.getElementById('tab-monthly').classList.add('text-gray-400');
+            document.getElementById('tab-half-year').classList.add('text-gray-400');
+            document.getElementById('tab-yearly').classList.add('text-gray-400');
+
+            // Показываем нужную группу и активируем кнопку
+            if(type === 'monthly') {
+                document.getElementById('group-monthly').classList.remove('hidden');
+                document.getElementById('tab-monthly').classList.add('tab-active');
+            } else if(type === 'half-year') {
+                document.getElementById('group-half-year').classList.remove('hidden');
+                document.getElementById('tab-half-year').classList.add('tab-active');
+            } else if(type === 'yearly') {
+                document.getElementById('group-yearly').classList.remove('hidden');
+                document.getElementById('tab-yearly').classList.add('tab-active');
+            }
+        }
+
+        // FAQ Аккордеон
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('hidden');
+            });
+        });
+
+        // Логика квиза
+        let quiz = { student: false, pool: false, time: 'morning' };
+        function nextStep(f, v) {
+            quiz[f] = v;
+            if(f==='student') {
+                document.getElementById('step-1').classList.add('hidden');
+                document.getElementById('step-2').classList.remove('hidden');
+            } else if(f==='pool') {
+                document.getElementById('step-2').classList.add('hidden');
+                document.getElementById('step-3').classList.remove('hidden');
+            }
+        }
+        function calculateResult(t) {
+            quiz.time = t;
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-result').classList.remove('hidden');
+            const title = document.getElementById('result-title');
+            const desc = document.getElementById('result-desc');
+
+            if(quiz.student) {
+                title.innerText = "Student Card";
+                desc.innerText = "Лучшая студенческая цена — 7 500 ₸!";
+            } else if(quiz.pool) {
+                title.innerText = "Безлимитный";
+                desc.innerText = "Вам идеально подойдёт безлимитный абонемент с сауной и бассейном.";
+            } else {
+                title.innerText = quiz.time === 'morning' ? "Дневная подписка" : "Вечерняя подписка";
+                desc.innerText = "Оптимальный выбор для ваших тренировок по фиксированному графику.";
+            }
+        }
+        function resetQuiz() {
+            document.getElementById('step-result').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
